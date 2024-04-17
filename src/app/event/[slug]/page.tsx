@@ -1,6 +1,6 @@
 import H1 from "@/components/H1";
 import { getEvent } from "@/lib/utils";
-import { eventoEvent } from "@prisma/client";
+import { EventoEvent } from "@prisma/client";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function SingularEvent({ params }: Props) {
   const slug = params.slug;
-  const event: eventoEvent[] = await getEvent(slug);
+  const event: EventoEvent = await getEvent(slug);
 
   return (
     <main>
